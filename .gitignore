@@ -1,0 +1,7 @@
+User/* 
+!Package Control.sublime-settings
+!Default (Linux).sublime-keymap 
+!Default (Linux).sublime-mousemap
+!Preferences.sublime-settings
+.bash_history
+notes.txt
