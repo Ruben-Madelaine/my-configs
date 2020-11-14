@@ -1,7 +1,17 @@
 User/* 
+<<<<<<< HEAD
 !Package Control.sublime-settings
 !Default (Linux).sublime-keymap 
 !Default (Linux).sublime-mousemap
 !Preferences.sublime-settings
 .bash_history
 notes.txt
+=======
+!User/Package Control.sublime-settings
+!User/Default (Linux).sublime-keymap 
+!User/Default (Linux).sublime-mousemap
+!User/Preferences.sublime-settings
+.bash_history
+notes.txt
+*.[oa]
+>>>>>>> :sparkles: Add new files and update README.md
