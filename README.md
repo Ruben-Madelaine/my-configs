@@ -1,16 +1,11 @@
-#My Configurations
+# My Configurations
 > Here are my Bash, Git and Sublime Text configs
 
 
-##Prerequisites
+## Prerequisites
 make sure Package Control is installed and it will automatically install the correct packages based on the packages list 
 
-
-help links:
-https://en.wikipedia.org/wiki/Symbolic_link
-https://bit.ly/2UqYIki
-
-##Bash symlink commands
+## Bash symlink commands
 
 Sublime Text configs:
 ```sh
@@ -31,3 +26,7 @@ Bash configs:
 ```sh
 ln -s ~/.bashrc /home/ruben/workspace/projects/configs
 ```
+
+Finally, you can find additional information here:
+https://en.wikipedia.org/wiki/Symbolic_link
+https://bit.ly/2UqYIki
