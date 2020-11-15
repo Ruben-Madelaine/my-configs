@@ -48,7 +48,7 @@ ln -s ~/.bashrc /home/ruben/workspace/projects/configs
 <<<<<<< HEAD
 ```
 
-:sos: Finally, you can find additional information here:
+:sos: Finally, you can find additional informations here:
 - https://en.wikipedia.org/wiki/Symbolic_link
 - https://bit.ly/2UqYIki
 =======
