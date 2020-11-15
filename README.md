@@ -1,4 +1,4 @@
-# My Configurations
+# :wrench: My Configurations 
 > Here are my Bash, Git and Sublime Text configs
 
 
@@ -12,7 +12,7 @@ Sublime Text configs:
 ln -s ~/.config/sublime-text-3/Packages/User /home/ruben/workspace/projects/configs
 ```
 
-Git aliases:
+:octocat: Git aliases:
 ```sh
 ln -s ~/.gitconfig /home/ruben/workspace/projects/configs
 ```
@@ -27,6 +27,6 @@ Bash configs:
 ln -s ~/.bashrc /home/ruben/workspace/projects/configs
 ```
 
-Finally, you can find additional information here:
-https://en.wikipedia.org/wiki/Symbolic_link
-https://bit.ly/2UqYIki
+:sos: Finally, you can find additional information here:
+- https://en.wikipedia.org/wiki/Symbolic_link
+- https://bit.ly/2UqYIki
