@@ -1,0 +1,9 @@
+{
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"ColorPick",
+		"Vintage"
+	],
+	"theme": "Default.sublime-theme"
+}

@@ -11,24 +11,26 @@ make sure Package Control is installed and it will automatically install the cor
 
 Sublime Text configs:
 ```sh
-ln -s ~/.config/sublime-text-3/Packages/User /home/ruben/workspace/projects/configs
+ln -s /home/ruben/workspace/projects/configs/User ~/.config/sublime-text-3/Packages
 ```
 
 :octocat: Git aliases:
 ```sh
-ln -s ~/.gitconfig /home/ruben/workspace/projects/configs
+ln -s /home/ruben/workspace/projects/configs/.gitconfig ~/.gitconfig
 ```
 
 Bash aliases:
 ```sh
-ln -s ~/.bash_aliases /home/ruben/workspace/projects/configs
+ln -s /home/ruben/workspace/projects/configs/.bash_aliases ~/.bash_aliases
 ```
 
 Bash configs:
 ```sh
-ln -s ~/.bashrc /home/ruben/workspace/projects/configs
+ln -s /home/ruben/workspace/projects/configs/.bashrc ~/.bashrc
 ```
 
-:sos: Finally, you can find additional informations here:
+## Need help ?
+
+:sos: You can find additional informations here:
 - https://en.wikipedia.org/wiki/Symbolic_link
 - https://bit.ly/2UqYIki

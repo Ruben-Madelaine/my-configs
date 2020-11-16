@@ -1,1 +1,34 @@
-/home/ruben/.gitconfig
+[user]
+    email = madelaine.ruben@hotmail.com
+    name = Ruben Madelaine
+    
+[format]
+    pretty = format:%C(yellow)%h %C(auto,green)%ad %C(auto,blue)%<(9,trunc)%aN %C(auto,reset)%s%C(auto,red)%d
+
+[alias]
+    a = add -A .
+    ac = '!git add -A && git commit'
+    am = commit --amend -m
+
+    b = branch
+    ba  = branch -a      # List both remote-tracking branches and local branches.
+    bd  = branch -d      # Delete a branch only if it has been merged
+    bD  = branch -D      # Force delete a branch
+    bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d" #remove all branches merged into the branch you’re on
+
+    c   = commit         # Commit you changes
+    ck  = checkout       # Checkout a branch
+    ckb = checkout -b    # Checkout a new not yet existing branch
+    cl = clone
+    cp = cherry-pick
+    diff = diff --word-diff
+    diffc  = diff --cached  # Display the staged changes
+    ec = config --global -e # Open aliases in default editor
+    f   = fetch -p  # Fetch from a repository and prune any remote-tracking references that no longer exist on the remote.
+    
+    p = push  # Push you changes to a remote
+    r = reset
+    rank = shortlog -sn --no-merges
+    s = status
+    st = status -sb
+    undo = reset --soft HEAD^ # Undo the last commit
