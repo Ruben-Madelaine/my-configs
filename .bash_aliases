@@ -61,7 +61,7 @@ alias gcam='git commit --amend'
 alias gcamne='git commit --amend --no-edit'
 
 alias gck="git checkout"
-alias gckb="git checkout -b"
+alias gckb="git checkout -b" #create new branch
 alias gd='git diff'
 
 alias gl="git log --oneline"
