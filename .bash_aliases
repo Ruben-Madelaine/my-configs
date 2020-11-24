@@ -18,34 +18,32 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 
 ## basic aliases
+alias ar='sudo apt-get autoremove'
 alias c='clear'
-alias ii='sudo apt-get install'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias pbcopy="xclip -sel clip"
-alias pbpaste='xclip -selection clipboard -o'
-alias ui='sudo apt-get --purge remove'
-
-
-
+alias doc="cd ~/Documents"
+alias dw="cd ~/Downloads"
+alias dk="cd ~/Desktop"
 
 alias editalias='gedit /home/ruben/workspace/projects/configs/.bash_aliases'
 alias editbash='gedit /home/ruben/workspace/projects/configs/.bashrc'
 alias editgit='gedit /home/ruben/workspace/projects/configs/.gitconfig'
-# alias editgit2='git config --global --edit' #??
 
-
-
+alias ii='sudo apt-get install'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
 alias p='cd /home/ruben/workspace/projects' 
+alias pbcopy="xclip -sel clip"
+alias pbpaste='xclip -selection clipboard -o'
 alias reboot='sudo reboot'
 alias refresh='source ~/.bashrc'
-alias rf=refresh
-alias ar='sudo apt-get autoremove'
+alias r=refresh
 alias sleep="systemctl suspend"
+
 alias u='sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
-alias uu='sudo apt-get update'
-alias uuu='sudo apt-get upgrade'
+alias ui='sudo apt-get --purge remove'
+alias ud='sudo apt-get update'
+alias ug='sudo apt-get upgrade'
 
 
  # git
@@ -62,7 +60,6 @@ alias gc='git commit'
 alias gcam='git commit --amend'
 alias gcamne='git commit --amend --no-edit'
 
-
 alias gck="git checkout"
 alias gckb="git checkout -b"
 alias gd='git diff'
@@ -78,7 +75,11 @@ alias gpo="git push -u origin"
 alias gps='git push' #NEW
 #alias gpf='git push -f' #BE CAREFUL
 
-
+# Remove branches that have already been merged with main.
+# a.k.a. ‘delete merged’
+alias rmb="!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+alias prune-local="git branch --merged | grep -v master | grep -v dev | xargs -n 1 git branch -d"
+alias prune-all="git remote | xargs -n 1 git remote prune"
 alias grs='git reset'
 alias grsh='git reset --hard' #NEW
 alias grv='git revert'

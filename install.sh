@@ -14,10 +14,11 @@ sudo apt install chromium-browser \
 				 tree \
 				 i3 \
 				 terminator \
-				 git-all \
 				 python3-pip \
 				 unity-tweak-tool \
-				 -y xclip
+				 -y xclip \
+				 git-all \
+
 
 wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"

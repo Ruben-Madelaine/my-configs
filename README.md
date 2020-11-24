@@ -14,6 +14,11 @@ Sublime Text configs:
 ln -s /home/ruben/workspace/projects/my-configs/User ~/.config/sublime-text-3/Packages
 ```
 
+Terminator configs:
+```sh
+ln -s /home/ruben/workspace/projects/my-configs/terminator/ ~/.config
+```
+
 :octocat: Git aliases:
 ```sh
 ln -s /home/ruben/workspace/projects/my-configs/.gitconfig ~/.gitconfig
