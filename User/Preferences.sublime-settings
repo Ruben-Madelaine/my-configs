@@ -3,6 +3,7 @@
 	"ignored_packages":
 	[
 		"ColorPick",
+		"Gitmoji",
 		"Vintage"
 	],
 	"theme": "Default.sublime-theme"

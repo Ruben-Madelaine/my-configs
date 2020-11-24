@@ -11,22 +11,27 @@ make sure Package Control is installed and it will automatically install the cor
 
 Sublime Text configs:
 ```sh
-ln -s /home/ruben/workspace/projects/configs/User ~/.config/sublime-text-3/Packages
+ln -s /home/ruben/workspace/projects/my-configs/User ~/.config/sublime-text-3/Packages
 ```
 
 :octocat: Git aliases:
 ```sh
-ln -s /home/ruben/workspace/projects/configs/.gitconfig ~/.gitconfig
+ln -s /home/ruben/workspace/projects/my-configs/.gitconfig ~/.gitconfig
 ```
 
 Bash aliases:
 ```sh
-ln -s /home/ruben/workspace/projects/configs/.bash_aliases ~/.bash_aliases
+ln -s /home/ruben/workspace/projects/my-configs/.bash_aliases ~/.bash_aliases
 ```
 
 Bash configs:
 ```sh
-ln -s /home/ruben/workspace/projects/configs/.bashrc ~/.bashrc
+ln -s /home/ruben/workspace/projects/my-configs/.bashrc ~/.bashrc
+```
+
+Bash history:
+```sh
+ln -s /home/ruben/workspace/projects/private-configs/.bash_history ~/.bash_history
 ```
 
 ## Need help ?

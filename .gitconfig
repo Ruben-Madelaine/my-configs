@@ -1,6 +1,6 @@
 [user]
-    email = madelaine.ruben@hotmail.com
-    name = Ruben Madelaine
+	email = madelaine.ruben@hotmail.com
+	name = Ruben-Madelaine
     
 [format]
     pretty = format:%C(yellow)%h %C(auto,green)%ad %C(auto,blue)%<(9,trunc)%aN %C(auto,reset)%s%C(auto,red)%d
@@ -32,3 +32,7 @@
     s = status
     st = status -sb
     undo = reset --soft HEAD^ # Undo the last commit
+[color]
+	ui = true
+[core]
+	editor = subl -n -w

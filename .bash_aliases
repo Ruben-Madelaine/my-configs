@@ -23,17 +23,25 @@ alias ii='sudo apt-get install'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+alias pbcopy="xclip -sel clip"
+alias pbpaste='xclip -selection clipboard -o'
+alias ui='sudo apt-get --purge remove'
+
+
 
 
 alias editalias='gedit /home/ruben/workspace/projects/configs/.bash_aliases'
 alias editbash='gedit /home/ruben/workspace/projects/configs/.bashrc'
 alias editgit='gedit /home/ruben/workspace/projects/configs/.gitconfig'
-alias editgit2='git config --global --edit' #??
+# alias editgit2='git config --global --edit' #??
+
+
 
 alias p='cd /home/ruben/workspace/projects' 
 alias reboot='sudo reboot'
 alias refresh='source ~/.bashrc'
-alias rr='sudo apt-get autoremove'
+alias rf=refresh
+alias ar='sudo apt-get autoremove'
 alias sleep="systemctl suspend"
 alias u='sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
 alias uu='sudo apt-get update'
@@ -44,6 +52,7 @@ alias uuu='sudo apt-get upgrade'
 alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
+alias gac='git add -A && git commit'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
@@ -51,7 +60,8 @@ alias gbbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD)
 
 alias gc='git commit'
 alias gcam='git commit --amend'
-alias gac='git add -A && git commit'
+alias gcamne='git commit --amend --no-edit'
+
 
 alias gck="git checkout"
 alias gckb="git checkout -b"
@@ -80,4 +90,3 @@ alias gss="git status -sb"
 alias gsh='git stash'
 alias gt='git tag'
 alias gw='git whatchanged'
-

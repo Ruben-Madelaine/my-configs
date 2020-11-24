@@ -1,4 +1,5 @@
 [ -z "$PS1" ] && return
+PROMPT_DIRTRIM=3 #len of current working directory
 
 HISTCONTROL=ignoredups:ignorespace
 
@@ -20,7 +21,8 @@ esac
 
 PROMPT_DIRTRIM=3
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Bash\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# set terminal line start
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Bash🍏\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 
 # enable color support of ls and also add handy aliases
