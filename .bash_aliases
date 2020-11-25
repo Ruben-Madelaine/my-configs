@@ -59,15 +59,15 @@ alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) 
 alias gbbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 alias gc='git commit'
-alias gcam='git commit --amend'
-alias gcamne='git commit --amend --no-edit'
+alias gcamm='git commit --amend'
+alias gcam='git commit --amend --no-edit'
 
 alias gck="git checkout"
 alias gckb="git checkout -b" #create new branch
 alias gd='git diff'
 
 alias gl="git log --oneline"
-alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all" #UPDATE
+alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all" #UPDATE
 alias glp="git log --decorate --graph --abbrev-commit --date=relative"
 alias glpa="glp --all" #UPDATE
 alias gm='git merge'
