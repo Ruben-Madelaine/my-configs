@@ -18,7 +18,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 
 ## basic aliases
-alias ar='sudo apt-get autoremove'
+alias ar='yes | sudo apt-get autoremove'
 alias c='clear'
 alias doc="cd ~/Documents"
 alias dw="cd ~/Downloads"
@@ -28,7 +28,8 @@ alias editalias='gedit /home/ruben/workspace/projects/configs/.bash_aliases'
 alias editbash='gedit /home/ruben/workspace/projects/configs/.bashrc'
 alias editgit='gedit /home/ruben/workspace/projects/configs/.gitconfig'
 
-alias ii='sudo apt-get install'
+alias i='sudo apt-get install'
+alias ii='yes | sudo apt-get install'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
@@ -39,11 +40,12 @@ alias reboot='sudo reboot'
 alias refresh='source ~/.bashrc'
 alias r=refresh
 alias sleep="systemctl suspend"
+alias s="systemctl suspend"
 
-alias u='sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
+alias u='yes | sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
 alias ui='sudo apt-get --purge remove'
-alias ud='sudo apt-get update'
-alias ug='sudo apt-get upgrade'
+alias ud='yes | sudo apt-get update'
+alias ug='yes | sudo apt-get upgrade'
 
 
  # git
@@ -61,7 +63,7 @@ alias gcam='git commit --amend'
 alias gcamne='git commit --amend --no-edit'
 
 alias gck="git checkout"
-alias gckb="git checkout -b"
+alias gckb="git checkout -b" #create new branch
 alias gd='git diff'
 
 alias gl="git log --oneline"
@@ -90,4 +92,6 @@ alias gs="git status"
 alias gss="git status -sb"
 alias gsh='git stash'
 alias gt='git tag'
+alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA 
+alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'

@@ -54,7 +54,6 @@
 [core]
 	editor = subl -n -w
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    pager = delta
 
 [diff]
     tool = vimdiff
@@ -78,4 +77,4 @@
     username = Ruben-Madelaine
 
 [web]
-    browser = google-chrome
+    browser = chromium-browser
