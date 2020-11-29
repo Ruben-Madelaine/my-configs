@@ -1,10 +1,8 @@
 {
-	"font_size": 14,
+	"font_size": 12,
 	"ignored_packages":
 	[
-		"ColorPick",
-		"Gitmoji",
+		"MarkdownPreview",
 		"Vintage"
-	],
-	"theme": "Default.sublime-theme"
+	]
 }

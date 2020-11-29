@@ -3,6 +3,7 @@ PROMPT_DIRTRIM=1 #len of current working directory
 
 HISTCONTROL=ignoredups:ignorespace
 
+
 shopt -s histappend # append to the history file after each command
 shopt -s checkwinsize # check the window size after each command and, if necessary, update
 
@@ -56,13 +57,14 @@ fi
 # neofetch
 
 
-function _update_ps1() {
-    PS1=$(powerline-shell $?) #https://github.com/b-ryan/powerline-shell
-    #https://github.com/ryanoasis/nerd-fonts
-}
+# function _update_ps1() {
+#     PS1=$(powerline-shell $?) #https://github.com/b-ryan/powerline-shell
+#     #https://github.com/ryanoasis/nerd-fonts
+# }
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 
 
+HISTTIMEFORMAT="%F %T "
