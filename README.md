@@ -44,7 +44,29 @@ Neofetch configs:
 ln -s /home/ruben/workspace/projects/my-configs/neofetch ~/.config
 ```
 
+ZSH configs:
+```sh
+ln -s /home/ruben/workspace/projects/my-configs/.zshrc ~/.zshrc
+```
 
+Fish configs:
+```sh
+ln -s /home/ruben/workspace/projects/my-configs/config.fish ~/.config/fish/config.fish
+```
+
+
+Powerline-Shell configs:
+```sh
+ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/config.json ~/.config/powerline-shell/config.json
+
+ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/theme.py ~/.local/lib/python3.8/site-packages/powerline_shell/themes/theme.py
+
+ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/git.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/git.py
+
+ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/root.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/root.py
+
+
+```
 
 ## Need help ?
 

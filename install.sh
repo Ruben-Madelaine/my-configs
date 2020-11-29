@@ -15,6 +15,8 @@ yes | sudo apt install chromium-browser \
 			   curl \
 			   sublime-text \
 			   flameshot \
+			   fish \
+			   zsh \
 			   gnupg-agent \
 			   software-properties-common \
 			   python3.9 \
@@ -35,4 +37,5 @@ pip3 install black
 sudo snap install pycharm-community --classic
 
 # ===========  Optional complementary packages  ===========
+# termite #terminal
 # 
