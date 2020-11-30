@@ -16,15 +16,15 @@ class Color(DefaultColor):
     SEPARATOR_FG = PATH_BG + 1 #OK
 
     READONLY_BG = 10 #OFF
-    READONLY_FG = 7
+    READONLY_FG = 15
 
     REPO_CLEAN_FG = 15
     REPO_CLEAN_BG = 22
     REPO_DIRTY_FG = 15
-    REPO_DIRTY_BG = 1 # 88 124 160 
+    REPO_DIRTY_BG = 1 # 88 124 160
 
     JOBS_FG = 10
-    JOBS_BG = 8
+    JOBS_BG = 15
 
     CMD_PASSED_FG = 15 #OK
     CMD_PASSED_BG = 28
@@ -32,7 +32,7 @@ class Color(DefaultColor):
     CMD_FAILED_BG = 160
 
     SVN_CHANGES_FG = 10
-    SVN_CHANGES_BG = REPO_DIRTY_BG
+    SVN_CHANGES_BG = 15
 
     VIRTUAL_ENV_BG = 88
     VIRTUAL_ENV_FG = 10

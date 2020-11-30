@@ -12,6 +12,9 @@
 
 # Bash configs
 
+
+alias neo="neofetch --source $(find /home/ruben/workspace/projects/my-configs/neofetch/ascii/ -type f | shuf -n 1)"
+
 ## Append history after each command
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
