@@ -3,7 +3,7 @@ from powerline_shell.themes.default import DefaultColor
 
 class Color(DefaultColor):
     USERNAME_FG = 15 #OK ruben
-    USERNAME_BG = 0 #OK
+    USERNAME_BG = 16 #OK
     USERNAME_ROOT_BG = 1 #OFF
 
     HOSTNAME_FG = 15  #OFF
@@ -34,7 +34,7 @@ class Color(DefaultColor):
     SVN_CHANGES_FG = 10
     SVN_CHANGES_BG = 15
 
-    VIRTUAL_ENV_BG = 88
+    VIRTUAL_ENV_BG = 0
     VIRTUAL_ENV_FG = 10
 
     AWS_PROFILE_FG = 10

@@ -11,59 +11,59 @@ make sure Package Control is installed and it will automatically install the cor
 
 Bash aliases:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/.bash_aliases ~/.bash_aliases
+ln -s /home/ruben/workspace/git/my-configs/.bash_aliases ~/.bash_aliases
 ```
 
 Bash configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/.bashrc ~/.bashrc
+ln -s /home/ruben/workspace/git/my-configs/.bashrc ~/.bashrc
 ```
 
 Bash history:
 ```sh
-ln -s /home/ruben/workspace/projects/private-configs/.bash_history ~/.bash_history
+ln -s /home/ruben/workspace/git/private-configs/.bash_history ~/.bash_history
 ```
 
 :octocat: Git aliases:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/.gitconfig ~/.gitconfig
+ln -s /home/ruben/workspace/git/my-configs/.gitconfig ~/.gitconfig
 ```
 
 Sublime Text configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/User ~/.config/sublime-text-3/Packages
+ln -s /home/ruben/workspace/git/my-configs/User ~/.config/sublime-text-3/Packages
 ```
 
 Terminator configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/terminator ~/.config
+ln -s /home/ruben/workspace/git/my-configs/terminator ~/.config
 ```
 
 Neofetch configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/neofetch ~/.config
+ln -s /home/ruben/workspace/git/my-configs/neofetch ~/.config
 ```
 
 ZSH configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/.zshrc ~/.zshrc
+ln -s /home/ruben/workspace/git/my-configs/.zshrc ~/.zshrc
 ```
 
 Fish configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/config.fish ~/.config/fish/config.fish
+ln -s /home/ruben/workspace/git/my-configs/config.fish ~/.config/fish/config.fish
 ```
 
 
 Powerline-Shell configs:
 ```sh
-ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/config.json ~/.config/powerline-shell/config.json
+ln -s /home/ruben/workspace/git/my-configs/powerline-shell/config.json ~/.config/powerline-shell/config.json
 
-ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/theme.py ~/.local/lib/python3.8/site-packages/powerline_shell/themes/theme.py
+ln -s /home/ruben/workspace/git/my-configs/powerline-shell/theme.py ~/.local/lib/python3.8/site-packages/powerline_shell/themes/theme.py
 
-ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/git.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/git.py
+ln -s /home/ruben/workspace/git/my-configs/powerline-shell/git.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/git.py
 
-ln -s /home/ruben/workspace/projects/my-configs/powerline-shell/root.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/root.py
+ln -s /home/ruben/workspace/git/my-configs/powerline-shell/root.py ~/.local/lib/python3.8/site-packages/powerline_shell/segments/root.py
 
 
 ```

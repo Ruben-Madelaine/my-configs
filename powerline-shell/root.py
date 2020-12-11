@@ -21,7 +21,7 @@ def emoji(emoji_list):
 	delta = int((today - start_date).days)
 	while delta > len(emoji_list):
 		delta -= len(emoji_list)
-	return emoji_list[delta]
+	return emoji_list[delta-1]
 
 class Segment(BasicSegment):
 

@@ -2,6 +2,12 @@ function fish_prompt
     powerline-shell --shell bare $status
 end
 
+set theme_color_scheme gruvbox
+
+
+
+## *******************************************
+
 ## basic aliases
 alias ar='yes | sudo apt-get autoremove'
 alias c='clear'
