@@ -54,6 +54,13 @@ Fish configs:
 ln -s /home/ruben/workspace/git/my-configs/config.fish ~/.config/fish/config.fish
 ```
 
+Awesome configs:
+```sh
+ln -s /home/ruben/workspace/git/my-configs/rc.lua ~/.config/awesome/rc.lua
+```
+
+
+
 
 Powerline-Shell configs:
 ```sh

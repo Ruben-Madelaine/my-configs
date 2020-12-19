@@ -3,7 +3,8 @@ User/*
 !User/Default (Linux).sublime-keymap 
 !User/Default (Linux).sublime-mousemap
 !User/Preferences.sublime-settings
-.bash_history
+.bash
+_history
 */config_test/*
 */__pycache__/*
 notes.txt

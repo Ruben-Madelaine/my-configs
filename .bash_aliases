@@ -10,11 +10,6 @@
   done;
 }
 
-# Bash configs
-
-
-alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii/ -type f | shuf -n 1)"
-
 ## Append history after each command
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
@@ -23,14 +18,9 @@ STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 ## basic aliases
 alias ar='yes | sudo apt-get autoremove'
 alias c='clear'
-alias cdmc='cd /home/ruben/workspace/projects/my-configs'
-alias doc="cd ~/Documents"
-alias dw="cd ~/Downloads"
-alias dk="cd ~/Desktop"
-
-alias editalias='gedit /home/ruben/workspace/projects/configs/.bash_aliases'
-alias editbash='gedit /home/ruben/workspace/projects/configs/.bashrc'
-alias editgit='gedit /home/ruben/workspace/projects/configs/.gitconfig'
+alias conf='cd ~/.config'
+alias cdp='cd /home/ruben/workspace/projects'
+alias cdg='cd /home/ruben/workspace/git'
 
 alias f='fish'
 alias h='history'
@@ -38,26 +28,29 @@ alias i='sudo apt-get install'
 alias ii='yes | sudo apt-get install'
 alias l='ls -CF'
 alias la='ls -A'
+alias light='redshift -PO 5500'
+alias light+='redshift -x'
 alias ll='ls -alF'
+alias logout='sudo pkill -KILL -u ruben'
 alias mx='unimatrix -w -s 98 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
-alias p='cd /home/ruben/workspace/git' 
-alias pip='pip3' 
+# alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
+alias night='redshift -PO 2800'
+alias pip='pip3'
 alias python='python3' 
 alias pbcopy="xclip -sel clip"
 alias pbpaste='xclip -selection clipboard -o'
 alias reboot='sudo reboot'
-alias refresh='source ~/.bashrc'
-alias r=refresh
+alias r='source ~/.bashrc'
 alias sleep="systemctl suspend"
 alias s="systemctl suspend"
-alias neo="neofetch"
+alias toilet1="toilet -f bigmono9 -F gay"
 
 alias u='yes | sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 alias ui='yes | sudo apt purge'
 alias uii='yes | sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
-alias ud='yes | sudo apt-get update'
-alias ug='yes | sudo apt-get upgrade'
+alias ud='yes | sudo apt update'
+alias ug='yes | sudo apt upgrade'
 
 
  # git
