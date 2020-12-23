@@ -187,8 +187,9 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "📚", "🐚", "🔎", "4", "5", "6", "7", "🎶", "🦾" }, s, awful.layout.layouts[1])
-
+    awful.tag({ "📚", "🐚", "🔎","🎶", "5", "6", "👁", "📂", "🦾" }, s, awful.layout.layouts[1])
+ 
+ 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -249,20 +250,24 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
+    awful.key({ modkey, "Shift"   }, "j",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
+    awful.key({ modkey, "Shift"   }, "k",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ modkey,           }, "j",
+
+-- switch window focus
+
+
+    awful.key({ modkey,           }, "a",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "k",
+    awful.key({ modkey,          }, "z",
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -272,17 +277,17 @@ globalkeys = gears.table.join(
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
+    awful.key({ modkey,           }, "k", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+    awful.key({ modkey,           }, "j", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ modkey,           }, "<",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
@@ -297,25 +302,29 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("chromium") end,
               {description = "open chromium", group = "launcher"}),
-    awful.key({ modkey,           }, "Suppr", function () awful.spawn("sleep") end,
-              {description = "suspend pc", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("nano") end,
-              {description = "open a file explorer", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("nautilus") end,
+              {description = "open nautilus", group = "launcher"}),
+    
+    awful.key({ modkey, "Shift"   }, "o", function () awful.spawn("virtualbox") end,
+              {description = "open virtualbox", group = "launcher"}),
+
+    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("gnome-disks") end,
+              {description = "open gnome-disks", group = "launcher"}),
+
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("subl") end,
               {description = "open sublime", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("disks") end,
-              {description = "open a terminal", group = "launcher"}),
-    -- awful.key({ modkey,           }, "<", function () awful.spawn("nano") end,
-    --           {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
+    awful.key({ modkey, "Shift"   }, "z", function () awful.spawn(terminal.." -e systemctl suspend") end,
+              {description = "suspend pc", group = "launcher"}),
+
+    awful.key({ modkey, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "i",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -368,7 +377,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey,           }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -522,7 +531,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -594,3 +603,20 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Autorun programs
+autorun = true
+autorunApps = 
+{ 
+  --"terminator",
+  --"chromium",
+  --"nautilus",
+}
+if autorun then
+   for app = 1, #autorunApps do
+       awful.util.spawn(autorunApps[app])
+   end
+end
+
+
+

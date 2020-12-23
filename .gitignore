@@ -1,12 +1,4 @@
-User/*
-!User/Package Control.sublime-settings
-!User/Default (Linux).sublime-keymap 
-!User/Default (Linux).sublime-mousemap
-!User/Preferences.sublime-settings
-.bash
-_history
-*/config_test/*
-*/__pycache__/*
-notes.txt
-*.[oa]
-*/ascii/*
+__pycache__/
+*.swp
+*.swo
+**/database/*.db

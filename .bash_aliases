@@ -10,6 +10,17 @@
   done;
 }
 
+
+alias ddmount="sudo fdisk -l && sudo mount /dev/sd* /mnt"
+
+
+
+look4(){
+	my_var=$1
+	sudo find ./ -name "$my_var" | rev | cut -d '/' -f1 | rev
+	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
+}
+
 ## Append history after each command
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
@@ -21,6 +32,10 @@ alias c='clear'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
 alias cdg='cd /home/ruben/workspace/git'
+alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
+alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
+
+
 
 alias f='fish'
 alias h='history'
@@ -28,8 +43,9 @@ alias i='sudo apt-get install'
 alias ii='yes | sudo apt-get install'
 alias l='ls -CF'
 alias la='ls -A'
-alias light='redshift -PO 5500'
-alias light+='redshift -x'
+alias day='redshift -PO 5500'
+alias lightoff='redshift -x'
+alias light-='redshift -O 2000'
 alias ll='ls -alF'
 alias logout='sudo pkill -KILL -u ruben'
 alias mx='unimatrix -w -s 98 -l ckg && neofetch'
@@ -102,6 +118,14 @@ alias gt='git tag'
 alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA 
 alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'
+
+
+alias wifi_list='nmcli d wifi list'
+
+
+
+
+
 
 # #git moji
 # :fire: Remove code or files.""

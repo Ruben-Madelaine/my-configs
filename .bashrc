@@ -2,7 +2,8 @@
 PROMPT_DIRTRIM=1 #len of current working directory
 
 HISTCONTROL=ignoredups:ignorespace
-
+HISTSIZE=
+HISTFILESIZE=
 
 shopt -s histappend # append to the history file after each command
 shopt -s checkwinsize # check the window size after each command and, if necessary, update
@@ -75,3 +76,8 @@ HISTTIMEFORMAT="%F %T "
 alias ls='ls --color'
 LS_COLORS='di=32:fi=0:ln=94:pi=33:so=33:bd=33:cd=33:or=31:mi=31:ex=33:*.rpm=90'
 export LS_COLORS
+
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
