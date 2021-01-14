@@ -6,6 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+require("collision")()
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -65,20 +66,20 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.tile.top,
+    awful.layout.suit.tile.left,
+    -- awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.corner.nw,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.floating,
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.corner.ne,   
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
@@ -117,7 +118,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = terminal -- Set the terminal for applicationsthat require it
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -187,7 +188,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "📚", "🐚", "🔎","🎶", "5", "6", "👁", "📂", "🦾" }, s, awful.layout.layouts[1])
+    awful.tag({ "📚", "🐚", "🔎","4", "5", "🎶", "👁", "📂", "🦾" }, s, awful.layout.layouts[1])
  
  
     -- Create a promptbox for each screen
@@ -302,20 +303,21 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("chromium") end,
               {description = "open chromium", group = "launcher"}),
+    
     awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("nautilus") end,
               {description = "open nautilus", group = "launcher"}),
     
+    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("gnome-disks") end,
+              {description = "open gnome-disks", group = "launcher"}),
+	      
     awful.key({ modkey, "Shift"   }, "o", function () awful.spawn("virtualbox") end,
               {description = "open virtualbox", group = "launcher"}),
 
-    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("gnome-disks") end,
-              {description = "open gnome-disks", group = "launcher"}),
-
+    awful.key({ modkey, "Shift"   }, "t", function () awful.spawn("gedit") end,
+              {description = "open gedit", group = "launcher"}),
+	      
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("subl") end,
               {description = "open sublime", group = "launcher"}),
-
-    awful.key({ modkey, "Shift"   }, "z", function () awful.spawn(terminal.." -e systemctl suspend") end,
-              {description = "suspend pc", group = "launcher"}),
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -339,6 +341,22 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
+
+
+    --Bash exec
+    awful.key({ modkey, "Control"   }, "z", function () awful.spawn(terminal.." -e systemctl suspend") end,
+              {description = "suspend pc", group = "launcher"}),
+
+    awful.key({ modkey, "Control" }, "r", function () awful.spawn(terminal.." -e shutdown -r now") end,
+              {description = "reboot pc", group = "launcher"}),
+
+    awful.key({ modkey, "Control" }, "Escape", function () awful.spawn(terminal.." -e shutdown -h now") end,
+              {description = "shutdown pc", group = "launcher"}),
+
+    awful.key({ modkey, "Control" }, "l", function () awful.spawn(terminal.." -e pkill -KILL -u ruben") end,
+              {description = "logout session", group = "launcher"}),
+
+    --
     awful.key({ modkey, "Control" }, "n",
               function ()
                   local c = awful.client.restore()
@@ -352,8 +370,8 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey, "Control"     }, "space",     function () awful.util.spawn("dmenu_run") end,
+              {description = "run dmenu", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -596,9 +614,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
-end)
+-- client.connect_signal("mouse::enter", function(c)
+--     c:emit_signal("request::activate", "mouse_enter", {raise = false})
+-- end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
@@ -618,5 +636,7 @@ if autorun then
    end
 end
 
+-- Gaps
+beautiful.useless_gap = 4
 
-
+ 

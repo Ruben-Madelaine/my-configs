@@ -60,7 +60,9 @@ alias reboot='sudo reboot'
 alias r='source ~/.bashrc'
 alias sleep="systemctl suspend"
 alias s="systemctl suspend"
+alias off="sudo /sbin/shutdown -r now"
 alias toilet1="toilet -f bigmono9 -F gay"
+
 
 alias u='yes | sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 alias ui='yes | sudo apt purge'
