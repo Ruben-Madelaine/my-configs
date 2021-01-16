@@ -39,6 +39,11 @@ Terminator configs:
 ln -s /home/ruben/workspace/git/my-configs/terminator ~/.config
 ```
 
+Tmux configs:
+```sh
+ln -s /home/ruben/workspace/git/my-configs/.tmux.conf ~/.tmux.conf
+```
+
 Neofetch configs:
 ```sh
 ln -s /home/ruben/workspace/git/my-configs/neofetch ~/.config

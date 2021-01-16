@@ -1,5 +1,9 @@
 [ -z "$PS1" ] && return
 PROMPT_DIRTRIM=1 #len of current working directory
+set -o vi #allows vi inside bash
+bind 'set completion-ignore-case on'
+# shopt -s cd spell
+# complete -d cd
 
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=
@@ -77,7 +81,7 @@ alias ls='ls --color'
 LS_COLORS='di=32:fi=0:ln=94:pi=33:so=33:bd=33:cd=33:or=31:mi=31:ex=33:*.rpm=90'
 export LS_COLORS
 
-
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+if command -v tmux >/dev/null 2>&1; then
+# if not inside a tmux session, and if no session is started, start a new session
+	[ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
 fi

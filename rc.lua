@@ -63,6 +63,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+alt = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -298,7 +299,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program /!\/!\/!\
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn("terminator") end,
               {description = "open a terminal", group = "launcher"}),
 
     awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("chromium") end,
@@ -370,7 +371,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey, "Control"     }, "space",     function () awful.util.spawn("dmenu_run") end,
+    awful.key({ alt     }, "space",     function () awful.util.spawn("dmenu_run") end,
               {description = "run dmenu", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -637,6 +638,6 @@ if autorun then
 end
 
 -- Gaps
-beautiful.useless_gap = 4
+beautiful.useless_gap = 5
 
  

@@ -46,7 +46,8 @@ alias la='ls -A'
 alias day='redshift -PO 5500'
 alias lightoff='redshift -x'
 alias light-='redshift -O 2000'
-alias ll='ls -alF'
+# alias ll='ls -alF'
+alias ll='exa --header --long -all'
 alias logout='sudo pkill -KILL -u ruben'
 alias mx='unimatrix -w -s 98 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
@@ -62,7 +63,15 @@ alias sleep="systemctl suspend"
 alias s="systemctl suspend"
 alias off="sudo /sbin/shutdown -r now"
 alias toilet1="toilet -f bigmono9 -F gay"
-
+tmx () {
+	tmux new-session -d -n S0 Command
+	tmux new-window -n S1
+	tmux split-window -h
+	tmux selectp -t 1
+	tmux split-window -v
+	tmux selectw -t 1
+	tmux -2 attach-session -d
+}
 
 alias u='yes | sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
 alias ui='yes | sudo apt purge'
