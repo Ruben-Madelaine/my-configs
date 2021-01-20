@@ -299,26 +299,26 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program /!\/!\/!\
-    awful.key({ modkey,           }, "Return", function () awful.spawn("terminator") end,
-              {description = "open a terminal", group = "launcher"}),
-
     awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("chromium") end,
               {description = "open chromium", group = "launcher"}),
     
-    awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("nautilus") end,
-              {description = "open nautilus", group = "launcher"}),
-    
-    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("gnome-disks") end,
-              {description = "open gnome-disks", group = "launcher"}),
-	      
-    awful.key({ modkey, "Shift"   }, "o", function () awful.spawn("virtualbox") end,
-              {description = "open virtualbox", group = "launcher"}),
-
     awful.key({ modkey, "Shift"   }, "t", function () awful.spawn("gedit") end,
               {description = "open gedit", group = "launcher"}),
 	      
+    awful.key({ modkey, "Shift"   }, "d", function () awful.spawn("gnome-disks") end,
+              {description = "open gnome-disks", group = "launcher"}),
+	      
+    awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("nautilus") end,
+              {description = "open nautilus", group = "launcher"}),
+    
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("subl") end,
               {description = "open sublime", group = "launcher"}),
+
+    awful.key({ modkey, "Shift"   }, "o", function () awful.spawn("virtualbox") end,
+              {description = "open virtualbox", group = "launcher"}),
+
+    awful.key({ modkey,           }, "Return", function () awful.spawn("terminator") end,
+              {description = "open a terminal", group = "launcher"}),
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -356,6 +356,9 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, "Control" }, "l", function () awful.spawn(terminal.." -e pkill -KILL -u ruben") end,
               {description = "logout session", group = "launcher"}),
+
+--    awful.key({ modkey,           }, "c", function () awful.spawn(terminal.." flameshot gui &") end,
+--              {description = "logout session", group = "launcher"}),
 
     --
     awful.key({ modkey, "Control" }, "n",
@@ -396,7 +399,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey,           }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey,           }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),

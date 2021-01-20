@@ -35,12 +35,11 @@ alias cdg='cd /home/ruben/workspace/git'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
 
-
-
 alias f='fish'
 alias h='history'
 alias i='sudo apt-get install'
 alias ii='yes | sudo apt-get install'
+alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
 alias l='ls -CF'
 alias la='ls -A'
 alias day='redshift -PO 5500'
@@ -53,6 +52,8 @@ alias mx='unimatrix -w -s 98 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
 # alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
 alias night='redshift -PO 2800'
+alias night2='redshift -PO 2000'
+alias night3='redshift -PO 1500'
 alias pip='pip3'
 alias python='python3' 
 alias pbcopy="xclip -sel clip"
@@ -68,8 +69,10 @@ tmx () {
 	tmux new-window -n S1
 	tmux split-window -h
 	tmux selectp -t 1
-	tmux split-window -v
+	tmux split-window -h
 	tmux selectw -t 1
+	tmux select-layout even-horizontal
+	tmux split-window -v
 	tmux -2 attach-session -d
 }
 

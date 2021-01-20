@@ -64,7 +64,10 @@ Awesome configs:
 ln -s /home/ruben/workspace/git/my-configs/rc.lua ~/.config/awesome/rc.lua
 ```
 
-
+Dmenu configs:
+```sh
+ln -s /home/ruben/workspace/git/my-configs/dmenu_path /usr/bin/dmenu_path
+```
 
 
 Powerline-Shell configs:
