@@ -1,4 +1,6 @@
 __pycache__/
 *.swp
 *.swo
+*.swm
+*.swn
 **/database/*.db

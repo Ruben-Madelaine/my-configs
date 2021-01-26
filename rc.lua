@@ -69,7 +69,8 @@ alt = "Mod1"
 awful.layout.layouts = {
     awful.layout.suit.fair,
     -- awful.layout.suit.tile.top,
-    awful.layout.suit.tile.left,
+    awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
     -- awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
@@ -79,7 +80,6 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.nw,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
     -- awful.layout.suit.corner.ne,   
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -241,11 +241,11 @@ end)
 -- }}}
 
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
+--root.buttons(gears.table.join(
+--    awful.button({ }, 3, function () mymainmenu:toggle() end),
+--   awful.button({ }, 4, awful.tag.viewnext),
+--    awful.button({ }, 5, awful.tag.viewprev)
+--))
 -- }}}
 
 -- {{{ Key bindings
@@ -299,7 +299,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program /!\/!\/!\
-    awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("chromium") end,
+    awful.key({ modkey,           }, "b", function () awful.spawn.with_shell("google-chrome") end,
               {description = "open chromium", group = "launcher"}),
     
     awful.key({ modkey, "Shift"   }, "t", function () awful.spawn("gedit") end,

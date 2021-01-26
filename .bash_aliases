@@ -27,7 +27,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 
 ## basic aliases
-alias ar='yes | sudo apt-get autoremove'
+alias ar='yes Y| sudo apt-get autoremove'
 alias c='clear'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
@@ -37,31 +37,35 @@ alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
 
 alias f='fish'
 alias h='history'
-alias i='sudo apt-get install'
-alias ii='yes | sudo apt-get install'
+alias i='yes Y| sudo apt install'
+#alias ii='yes Y| sudo apt install > /dev/null 2>&1 &'
+alias ii='screen -d -m yes Y| sudo apt install'
 alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
+alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias l='ls -CF'
 alias la='ls -A'
-alias day='redshift -PO 5500'
-alias lightoff='redshift -x'
-alias light-='redshift -O 2000'
+alias d='redshift -PO 5500 > /dev/null 2>&1'
+alias dd='redshift -x > /dev/null 5>&1'
+#alias darker='redshift -O 2000 > /dev/null 2>&1'
 # alias ll='ls -alF'
 alias ll='exa --header --long -all'
 alias logout='sudo pkill -KILL -u ruben'
-alias mx='unimatrix -w -s 98 -l ckg && neofetch'
+alias mx='unimatrix -w -s 99 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
 # alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
-alias night='redshift -PO 2800'
-alias night2='redshift -PO 2000'
-alias night3='redshift -PO 1500'
+alias n='redshift -PO 2800 > /dev/null 2>&1'
+alias nn='redshift -PO 2000 > /dev/null 2>&1'
+alias nnn='redshift -PO 1500 > /dev/null 2>&1'
 alias pip='pip3'
 alias python='python3' 
+alias py='python3' 
 alias pbcopy="xclip -sel clip"
 alias pbpaste='xclip -selection clipboard -o'
 alias reboot='sudo reboot'
 alias r='source ~/.bashrc'
 alias sleep="systemctl suspend"
-alias s="systemctl suspend"
+alias s="sudo"
+# alias s="systemctl suspend"
 alias off="sudo /sbin/shutdown -r now"
 alias toilet1="toilet -f bigmono9 -F gay"
 tmx () {
@@ -76,11 +80,12 @@ tmx () {
 	tmux -2 attach-session -d
 }
 
-alias u='yes | sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
-alias ui='yes | sudo apt purge'
-alias uii='yes | sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
-alias ud='yes | sudo apt update'
-alias ug='yes | sudo apt upgrade'
+alias u='yes Y| sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
+alias ui='yes Y| sudo apt purge'
+alias uii='yes Y| sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
+alias ud='yes Y| sudo apt update'
+alias ug='yes Y| sudo apt upgrade'
+alias vba='visualboyadvance-m'
 
 
  # git
@@ -102,8 +107,9 @@ alias gck="git checkout"
 alias gckb="git checkout -b" #create new branch
 alias gd='git diff'
 
+alias gl="git log --graph --abbrev-commit --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias glb="git cherry -v master --abbrev"
 alias gll="git log --oneline"
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all" #UPDATE
 alias glp="git log --decorate --graph --abbrev-commit --date=relative"
 alias glpa="glp --all" #UPDATE
 alias gm='git merge'

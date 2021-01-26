@@ -80,8 +80,13 @@ HISTTIMEFORMAT="%F %T "
 alias ls='ls --color'
 LS_COLORS='di=32:fi=0:ln=94:pi=33:so=33:bd=33:cd=33:or=31:mi=31:ex=33:*.rpm=90'
 export LS_COLORS
+export EDITOR=vim
+export VISUAL=vim
+
 
 if command -v tmux >/dev/null 2>&1; then
 # if not inside a tmux session, and if no session is started, start a new session
 	[ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
 fi
+
+
