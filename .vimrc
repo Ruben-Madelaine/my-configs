@@ -1,3 +1,6 @@
+Plug 'vim-scripts/vim-plug'
+"then :source%
+"then :PlugInstall
 vi ~/vim/.vimrc
 inoremap jk <ESC>
 syntax on " highlight syntax
