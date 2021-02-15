@@ -72,8 +72,10 @@
 
 [user]
 	email = madelaine.ruben@hotmail.com
-	name = Ruben M
+	name = Ruben Madelaine
     username = Ruben-Madelaine
 
 [web]
     browser = chromium-browser
+[credential "https://github.com"]
+	helper = !gh auth git-credential

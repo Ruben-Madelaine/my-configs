@@ -30,22 +30,8 @@ esac
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Ben🍏 \[\033[00m\]:\[\033[94m\]\w\[\033[93m\]\$(parse_git_branch)\[\033[00m\]\$ "
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Ruben \[\033[00m\]:\[\033[94m\]\w\[\033[93m\]\$(parse_git_branch)\[\033[00m\]\$ "
 #export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]Bash🍏\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-
-
-# enable color support of ls and also add handy aliases
-# if [ -x /usr/bin/dircolors ]; then
-#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-#     alias ls='ls --color=auto'
-#     #alias dir='dir --color=auto'
-#     #alias vdir='vdir --color=auto'
-
-#     alias grep='grep --color=auto'
-#     alias fgrep='fgrep --color=auto'
-#     alias egrep='egrep --color=auto'
-# fi
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -60,17 +46,6 @@ fi
 # enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-fi
-
-
-
-function _update_ps1() {
-    PS1=$(powerline-shell $?) #https://github.com/b-ryan/powerline-shell
-    #https://github.com/ryanoasis/nerd-fonts
-}
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 
@@ -90,3 +65,4 @@ if command -v tmux >/dev/null 2>&1; then
 fi
 
 
+source "$HOME/.cargo/env"

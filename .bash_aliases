@@ -30,18 +30,14 @@ STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 alias ar='yes Y| sudo apt-get autoremove'
 alias c='clear'
 alias conf='cd ~/.config'
-alias cdp='cd /home/ruben/workspace/projects'
-alias cdg='cd /home/ruben/workspace/git'
-alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
-alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
+alias cdg='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/'
+alias cds='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/safranAddUser/'
+alias cdw='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/'
 
-alias f='fish'
 alias h='history'
 alias i='yes Y| sudo apt install'
 #alias ii='yes Y| sudo apt install > /dev/null 2>&1 &'
 alias ii='screen -d -m yes Y| sudo apt install'
-alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
-alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias l='ls -CF'
 alias la='ls -A'
 alias d='redshift -PO 5500 > /dev/null 2>&1'
@@ -100,8 +96,8 @@ alias gbbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD)
 
 alias gc='git commit -m'
 alias gcamm='git commit --amend'
+alias gacam='git add -A && git commit --amend --no-edit'
 alias gcam='git commit --amend --no-edit'
-alias gamd='git commit --amend --no-edit'
 
 alias gck="git checkout"
 alias gckb="git checkout -b" #create new branch
