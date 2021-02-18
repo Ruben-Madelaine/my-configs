@@ -32,7 +32,7 @@ alias c='clear'
 alias conf='cd ~/.config'
 alias cdg='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/'
 alias cds='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/safranAddUser/'
-alias cdw='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/'
+alias cdw='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/'
 
 alias h='history'
 alias i='yes Y| sudo apt install'
@@ -89,6 +89,17 @@ alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
 alias gac='git add -A && git commit -m'
+alias gac_cw='git add -A && git commit -m ":construction_worker:'
+alias gac_h='git add -A && git commit -m ":hammer:'
+alias gac_w='git add -A && git commit -m ":wrench:'
+alias gac_u='git add -A && git commit -m ":arrow_up:'
+alias gac_d='git add -A && git commit -m ":arrow_down:'
+alias gac_pack='git add -A && git commit -m ":package:'
+alias gac_pen='git add -A && git commit -m ":pencil:'
+alias gac_cm='git add -A && git commit -m ":white_check_mark:'
+alias gac_t='git add -A && git commit -m ":tada:'
+alias gac_r='git add -A && git commit -m ":rocket:'
+alias gac_s='git add -A && git commit -m ":sparkles:'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
@@ -131,7 +142,7 @@ alias gs="git status"
 alias gss="git status -sb"
 alias gsh='git stash'
 alias gt='git tag'
-alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA 
+alias gu='git reset HEAD --' # unstage a cartain file:' #git unstage fileA 
 alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'
 
@@ -144,49 +155,48 @@ alias wifi_list='nmcli d wifi list'
 
 
 # #git moji
-# :fire: Remove code or files.""
-# :bug: Fix a bug.
-# :zap: Improve performance.
-# :ambulance: Critical hotfix.
-# :sparkles: Introduce new features.
-# :memo: Add or update documentation.
-# :rocket: Deploy stuff.
-# :tada: Begin a project.
-# :white_check_mark: Add or update tests.
-# :lock: Fix security issues.
-# :bookmark: Release / Version tags.
-# :construction: Work in progress.
-# :heavy_plus_sign: Add a dependency.
-# :heavy_minus_sign: Remove a dependency.
-# :wrench: Add or update configuration files.
-# :hammer: Add or update development scripts.
-# :pencil2: Fix typos.
-# :twisted_rightwards_arrows: Merge branches.
-# :package: Add or update compiled files or packages.
-# :alien: Update code due to external API changes.
-# :truck: Move or rename resources (e.g.: files, paths, routes).
-# :boom: Introduce breaking changes.
-# :bulb: Add or update comments in source code.
-# :beers: Write code drunkenly.
-# :card_file_box: Perform database related changes.
-# :building_construction: Make architectural changes.
-# :see_no_evil: Add or update a .gitignore file.
-# :alembic: Perform experiments.
-# :label: Add or update types.
-# :seedling: Add or update seed files.
-# :wastebasket: Deprecate code that needs to be cleaned up.
-# :adhesive_bandage: Simple fix for a non-critical issue.
+alias gac_fire='git add -A && git commit -m ":fire:' #Remove code or files.""
+alias gac_bug='git add -A && git commit -m ":bug:' #Fix a bug.
+alias gac_zap='git add -A && git commit -m ":zap:' #Improve performance.
+alias gac_ambulance='git add -A && git commit -m ":ambulance:' #Critical hotfix.
+alias gac_sparkles='git add -A && git commit -m ":sparkles:' #Introduce new features.
+alias gac_='git add -A && git commit -m ":memo:' #Add or update documentation.
+alias gac_='git add -A && git commit -m ":rocket:' #Deploy stuff.
+alias gac_='git add -A && git commit -m ":tada:' #Begin a project.
+alias gac_='git add -A && git commit -m ":white_check_mark:' #Add or update tests.
+alias gac_='git add -A && git commit -m ":lock:' #Fix security issues.
+alias gac_='git add -A && git commit -m ":bookmark:' #Release / Version tags.
+alias gac_='git add -A && git commit -m ":construction:' #Work in progress.
+alias gac_='git add -A && git commit -m ":heavy_plus_sign:' #Add a dependency.
+alias gac_='git add -A && git commit -m ":heavy_minus_sign:' #Remove a dependency.
+alias gac_='git add -A && git commit -m ":wrench:' #Add or update configuration files.
+alias gac_='git add -A && git commit -m ":hammer:' #Add or update development scripts.
+alias gac_='git add -A && git commit -m ":pencil2:' #Fix typos.
+alias gac_='git add -A && git commit -m ":twisted_rightwards_arrows:' #Merge branches.
+alias gac_='git add -A && git commit -m ":package:' #Add or update compiled files or packages.
+alias gac_='git add -A && git commit -m ":alien:' #Update code due to external API changes.
+alias gac_='git add -A && git commit -m ":truck:' #Move or rename resources (e.g.:' #files, paths, routes).
+alias gac_='git add -A && git commit -m ":boom:' #Introduce breaking changes.
+alias gac_='git add -A && git commit -m ":bulb:' #Add or update comments in source code.
+alias gac_='git add -A && git commit -m ":beers:' #Write code drunkenly.
+alias gac_='git add -A && git commit -m ":card_file_box:' #Perform database related changes.
+alias gac_='git add -A && git commit -m ":building_construction:' #Make architectural changes.
+alias gac_='git add -A && git commit -m ":see_no_evil:' #Add or update a .gitignore file.
+alias gac_='git add -A && git commit -m ":alembic:' #Perform experiments.
+alias gac_='git add -A && git commit -m ":label:' #Add or update types.
+alias gac_='git add -A && git commit -m ":seedling:' #Add or update seed files.
+alias gac_='git add -A && git commit -m ":wastebasket:' #Deprecate code that needs to be cleaned up.
+alias gac_='git add -A && git commit -m ":adhesive_bandage:' #Simple fix for a non-critical issue.
 
-# :arrow_up: Upgrade dependencies.
-# :pushpin: Pin dependencies to specific versions.
-# :construction_worker: Add or update CI build system.
-# :recycle: Refactor code.
+alias gac_='git add -A && git commit -m ":arrow_up:' #Upgrade dependencies.
+alias gac_='git add -A && git commit -m ":pushpin:' #Pin dependencies to specific versions.
+alias gac_='git add -A && git commit -m ":construction_worker:' #Add or update CI build system.
+alias gac_='git add -A && git commit -m ":recycle:' #Refactor code.
 
 # alias g :star2:
-# :floppy_disk:
-# 🗑
-# :cd:
-# :adhesive_bandage: Simple fix of a non-critical issue.
+alias gac_='git add -A && git commit -m ":floppy_disk:
+alias gac_='git add -A && git commit -m ":cd:
+alias gac_='git add -A && git commit -m ":adhesive_bandage:' #Simple fix of a non-critical issue.
 
 
 # alias g 
