@@ -40,8 +40,6 @@ alias h='history'
 alias i='yes Y| sudo apt install'
 #alias ii='yes Y| sudo apt install > /dev/null 2>&1 &'
 alias ii='screen -d -m yes Y| sudo apt install'
-alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
-alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias l='ls -CF'
 alias la='ls -A'
 alias d='redshift -PO 5500 > /dev/null 2>&1'
@@ -80,11 +78,13 @@ tmx () {
 	tmux -2 attach-session -d
 }
 
-alias u='yes Y| sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
+alias u='yes Y| sudo apt update && yes Y| sudo apt full-upgrade && yes Y| sudo apt autoremove && sudo apt clean && yes Y| sudo apt autoclean'
 alias ui='yes Y| sudo apt purge'
 alias uii='yes Y| sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
 alias ud='yes Y| sudo apt update'
 alias ug='yes Y| sudo apt upgrade'
+alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
+alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias vba='visualboyadvance-m'
 
 
@@ -99,8 +99,10 @@ alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) 
 alias gbbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 alias gc='git commit -m'
-alias gcamm='git commit --amend'
+alias gcame='git commit --amend'
 alias gcam='git commit --amend --no-edit'
+alias gagcampf='git add . && git commit --amend --no-edit && git push -f'
+alias gacampf='git add . && git commit --amend --no-edit && git push -f'
 alias gamd='git commit --amend --no-edit'
 
 alias gck="git checkout"

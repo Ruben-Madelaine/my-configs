@@ -14,6 +14,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/NERDTree'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/landscape.vim'
