@@ -2,7 +2,7 @@
 
 Here are most of my configs, includind my bashrc, my gitconfig, my Awesome WM lua.rc and much more.
 
-Below is an example of symlink
+Below is an example of symlink<br>
 ln -s /home/ruben/workspace/git/private-configs/.bash_history ~/.bash_history
 
 
