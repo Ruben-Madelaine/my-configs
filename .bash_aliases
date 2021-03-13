@@ -32,6 +32,7 @@ alias c='clear'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
 alias cdg='cd /home/ruben/workspace/git'
+alias cdvms='cd /home/ruben/workspace/projects/virtual_machine/shared/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
 
@@ -42,6 +43,7 @@ alias i='yes Y| sudo apt install'
 alias ii='screen -d -m yes Y| sudo apt install'
 alias l='ls -CF'
 alias la='ls -A'
+alias x='redshift -x'
 alias d='redshift -PO 5500 > /dev/null 2>&1'
 alias dd='redshift -x > /dev/null 5>&1'
 #alias darker='redshift -O 2000 > /dev/null 2>&1'
@@ -89,7 +91,15 @@ alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@key
 alias vba='visualboyadvance-m'
 
 
- # git
+
+alias voli='amixer -D pulse set Master 5%+'
+alias vold='amixer -D pulse set Master 5%-'
+alias volm='amixer -D pulse set Master mute'
+alias volum='amixer -D pulse set Master unmute'
+alias vola='amixer -D pulse set Master unmute'
+
+
+# git
 alias g='git'
 alias ga='git add'
 alias gaa='git add -A'

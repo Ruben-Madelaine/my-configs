@@ -189,7 +189,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "📚", "🐚", "🔎","4", "5", "🎶", "👁", "📂", "🦾" }, s, awful.layout.layouts[1])
+    awful.tag({ "🧭", "🔎", "📚","🎶", "5", "🐚", "📀", "📂", "🦾" }, s, awful.layout.layouts[1])
  
  
     -- Create a promptbox for each screen
@@ -351,7 +351,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "r", function () awful.spawn(terminal.." -e shutdown -r now") end,
               {description = "reboot pc", group = "launcher"}),
 
-    awful.key({ modkey, "Control" }, "Escape", function () awful.spawn(terminal.." -e shutdown -h now") end,
+    awful.key({ modkey, "Control" }, "s", function () awful.spawn(terminal.." -e shutdown -h now") end,
               {description = "shutdown pc", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "l", function () awful.spawn(terminal.." -e pkill -KILL -u ruben") end,

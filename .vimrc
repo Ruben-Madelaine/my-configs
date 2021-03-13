@@ -30,3 +30,8 @@ Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors' "vim-multiple-cursors
 
 call plug#end()
+
+"Save file with admin protection
+cmap w!! w !sudo tee > /dev/null %
+
+
