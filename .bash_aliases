@@ -31,8 +31,9 @@ alias ar='yes Y| sudo apt-get autoremove'
 alias c='clear'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
+alias cdb='cd //media/ruben/HD1/books'
 alias cdg='cd /home/ruben/workspace/git'
-alias cdvms='cd /home/ruben/workspace/projects/virtual_machine/shared/'
+alias cdvm='cd /home/ruben/workspace/projects/virtual_machine/shared/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
 
