@@ -52,8 +52,8 @@ alias dd='redshift -x > /dev/null 5>&1'
 alias ll='exa --header --long -all'
 alias logout='sudo pkill -KILL -u ruben'
 alias mx='unimatrix -c blue -w -s 99 -l ckg && neofetch'
+alias mx='unimatrix -c yellow -w -s 99 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
-alias mxxx='-c yellow -l -f -s 95 'e' aAcCgGkn'
 # alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
 alias n='redshift -PO 2800 > /dev/null 2>&1'
 alias nn='redshift -PO 2000 > /dev/null 2>&1'
@@ -90,7 +90,7 @@ alias ug='yes Y| sudo apt upgrade'
 alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
 alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias vba='visualboyadvance-m'
-
+alias vi='nvim'
 
 
 alias voli='amixer -D pulse set Master 5%+'

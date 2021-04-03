@@ -3,7 +3,9 @@
 "vi ~/vim/.vimrc
 ":source ~/.vim/.vimrc
 ":so %
-inoremap jk <ESC>
+nnoremap jk <ESC>
+nnoremap jj <ESC>
+nnoremap kj <ESC>
 syntax on " highlight syntax
 set number " show line numbers
 set noswapfile " disable the swapfile
@@ -30,7 +32,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors' "vim-multiple-cursors
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "firevim browser (chrome) extension
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "firevim browser (chrome) extension
 call plug#end()
 
 "Save file with admin protection
