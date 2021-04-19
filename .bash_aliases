@@ -14,12 +14,19 @@
 alias ddmount="sudo fdisk -l && sudo mount /dev/sd* /mnt"
 
 
+look4path(){
+	my_var=$1
+	sudo find ./ -name "$my_var"
+	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
+}
+alias lfp="look4path"
 
 look4(){
 	my_var=$1
 	sudo find ./ -name "$my_var" | rev | cut -d '/' -f1 | rev
 	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
 }
+alias lf="look4"
 
 ## Append history after each command
 shopt -s histappend
@@ -32,6 +39,7 @@ alias c='clear'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
 alias cdb='cd //media/ruben/HD1/books'
+alias viread='vi ~/workspace/git/statistica/Reading/planning\ de\ lecture.md'
 alias cdg='cd /home/ruben/workspace/git'
 alias cdvm='cd /home/ruben/workspace/projects/virtual_machine/shared/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
@@ -91,6 +99,12 @@ alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@key
 alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias vba='visualboyadvance-m'
 alias vi='nvim'
+
+alias vbrc='vi ~/.bashrc'
+alias vbal='vi ~/.bash_aliases'
+alias vvrc='vi ~/.vim/.vimrc'
+alias vtmx='vi ~/.tmux.conf'
+alias vxrc='vi ~/etc/X11/xinit/xinitrc'
 
 
 alias voli='amixer -D pulse set Master 5%+'
