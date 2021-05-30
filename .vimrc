@@ -17,22 +17,29 @@ au FocusGained,BufEnter * :checktime
 set t_Co=256
 let g:airline_powerline_fonts = 1
 set timeoutlen=1000 ttimeoutlen=0
+set relativenumber
+
+"let g:airline_theme='gruvbox'
+"colorscheme gruvbox
+"set background=dark
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-scripts/vim-plug'
-Plug 'preservim/NERDTree'
-Plug 'iamcco/markdown-preview.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/landscape.vim'
-Plug 'zxqfl/tabnine-vim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "firevim browser (chrome) extension
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'itchyny/landscape.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/airblade/vim-gitgutter'
+"Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'preservim/NERDTree'
 Plug 'terryma/vim-multiple-cursors' "vim-multiple-cursors
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "firevim browser (chrome) extension
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/vim-plug'
+Plug 'zxqfl/tabnine-vim'
 call plug#end()
 
 "Save file with admin protection

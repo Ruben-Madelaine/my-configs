@@ -34,13 +34,20 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 
 ## basic aliases
-alias ar='yes Y| sudo apt-get autoremove'
+alias a='autokey-gtk &'
 alias c='clear'
+alias ar='yes Y| sudo apt-get autoremove'
+alias cp='rsync --info=progress2'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
 alias cdb='cd //media/ruben/HD1/books'
 alias viread='vi ~/workspace/git/statistica/Reading/planning\ de\ lecture.md'
 alias cdg='cd /home/ruben/workspace/git'
+alias cdgk='cd /home/ruben/workspace/git/keylinks'
+alias cdgm='cd /home/ruben/workspace/git/my-configs'
+alias cdgs='cd /home/ruben/workspace/git/statistica'
+alias cdl='cd /media/linux_hd'
+alias cdlp='cd /media/linux_hd/private'
 alias cdvm='cd /home/ruben/workspace/projects/virtual_machine/shared/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
@@ -100,11 +107,15 @@ alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@key
 alias vba='visualboyadvance-m'
 alias vi='nvim'
 
-alias vbrc='vi ~/.bashrc'
 alias vbal='vi ~/.bash_aliases'
+alias vbrc='vi ~/.bashrc'
+alias vbhi='vi ~/.bash_history'
 alias vvrc='vi ~/.vim/.vimrc'
 alias vtmx='vi ~/.tmux.conf'
 alias vxrc='vi ~/etc/X11/xinit/xinitrc'
+alias vrcl='vi ~/.config/awesome/rc.lua'
+alias vpll='vi ~/workspace/git/statistica/Reading/planning_de_lecture.md'
+alias v.='sudo vi .'
 
 
 alias voli='amixer -D pulse set Master 5%+'
@@ -166,6 +177,25 @@ alias gt='git tag'
 alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA 
 alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'
+
+
+torb(){
+ xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/private/"$1"
+}
+torll(){
+ for entry in "/media/linux_hd/private"/*
+ do
+  if [ -f "$entry" ];then
+    echo "$entry"| sed 's/^\.\///g'
+  fi
+ done
+}
+
+torl(){
+ for file in /media/linux_hd/private/*; do
+  echo "${file##*/}"
+ done
+}
 
 alias wifi_list='nmcli d wifi list'
 

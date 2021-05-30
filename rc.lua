@@ -320,7 +320,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Return", function () awful.spawn("terminator") end,
               {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey, "Shift"   }, "r", awesome.restart,
+    awful.key({ modkey,           }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
@@ -348,6 +348,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control"   }, "z", function () awful.spawn(terminal.." -e systemctl suspend") end,
               {description = "suspend pc", group = "launcher"}),
 
+    awful.key({ modkey, "Control"   }, "f", function () awful.spawn(terminal.." -e sudo nautilus &") end,
+              {description = "suspend pc", group = "launcher"}),
+
     awful.key({ modkey, "Control" }, "r", function () awful.spawn(terminal.." -e shutdown -r now") end,
               {description = "reboot pc", group = "launcher"}),
 
@@ -361,7 +364,7 @@ globalkeys = gears.table.join(
 --              {description = "logout session", group = "launcher"}),
 
     --
-    awful.key({ modkey, "Control" }, "n",
+    awful.key({ modkey, "Shift" }, "n",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
