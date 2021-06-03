@@ -180,10 +180,10 @@ alias gw='git whatchanged'
 
 
 torb(){
- xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/private/"$1"
+ xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/tor/"$1"
 }
 torll(){
- for entry in "/media/linux_hd/private"/*
+ for entry in "/media/linux_hd/tor"/*
  do
   if [ -f "$entry" ];then
     echo "$entry"| sed 's/^\.\///g'
@@ -192,7 +192,7 @@ torll(){
 }
 
 torl(){
- for file in /media/linux_hd/private/*; do
+ for file in /media/linux_hd/tor/*; do
   echo "${file##*/}"
  done
 }
