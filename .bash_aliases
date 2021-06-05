@@ -178,25 +178,6 @@ alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA
 alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'
 
-
-torb(){
- xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/tor/"$1"
-}
-torll(){
- for entry in "/media/linux_hd/tor"/*
- do
-  if [ -f "$entry" ];then
-    echo "$entry"| sed 's/^\.\///g'
-  fi
- done
-}
-
-torl(){
- for file in /media/linux_hd/tor/*; do
-  echo "${file##*/}"
- done
-}
-
 alias wifi_list='nmcli d wifi list'
 
 #git moji
