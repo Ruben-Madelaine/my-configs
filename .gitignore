@@ -4,4 +4,4 @@ __pycache__/
 *.swm
 *.swn
 **/database/*.db
-*.bashrc*
+**/.bashrc*
