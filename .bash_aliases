@@ -14,14 +14,14 @@
 alias ddmount="sudo fdisk -l && sudo mount /dev/sd* /mnt"
 
 
-look4path(){
+look4(){
 	my_var=$1
 	sudo find ./ -name "$my_var"
 	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
 }
 alias lfp="look4path"
 
-look4(){
+look4name(){
 	my_var=$1
 	sudo find ./ -name "$my_var" | rev | cut -d '/' -f1 | rev
 	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
@@ -37,9 +37,14 @@ STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 alias a='autokey-gtk &'
 alias c='clear'
 alias ar='yes Y| sudo apt-get autoremove'
-alias cp='rsync --info=progress2'
+alias bm='blueman-manager &'
+alias cp='rsync -ra --info=progress2'
+alias ccp='gcp -rf'
+alias count='ls | wc -l'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
+alias cds='cd /home/ruben/Documents/VM/shared'
+
 alias cdb='cd //media/ruben/HD1/books'
 alias viread='vi ~/workspace/git/statistica/Reading/planning\ de\ lecture.md'
 alias cdg='cd /home/ruben/workspace/git'
@@ -47,19 +52,24 @@ alias cdgk='cd /home/ruben/workspace/git/keylinks'
 alias cdgm='cd /home/ruben/workspace/git/my-configs'
 alias cdgs='cd /home/ruben/workspace/git/statistica'
 alias cdl='cd /media/linux_hd'
+alias cdm='cd /media/'
 alias cdlp='cd /media/linux_hd/private'
-alias cdvm='cd /home/ruben/workspace/projects/virtual_machine/shared/'
+alias cdp='cd /home/ruben/workspace/projets'
+alias cq='copyq & copyq menu &'
+alias cqq='copyq & copyq toggle -e &'
+alias cdvm='cd /home/ruben/Documents/VM/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
+alias x='exit'
 
 alias f='fish'
 alias h='history'
 alias i='yes Y| sudo apt install'
 #alias ii='yes Y| sudo apt install > /dev/null 2>&1 &'
-alias ii='screen -d -m yes Y| sudo apt install'
+#alias ii='screen -d -m yes Y| sudo apt install'
 alias l='ls -CF'
 alias la='ls -A'
-alias x='redshift -x'
+alias xx='redshift -x'
 alias d='redshift -PO 5500 > /dev/null 2>&1'
 alias dd='redshift -x > /dev/null 5>&1'
 #alias darker='redshift -O 2000 > /dev/null 2>&1'
@@ -67,6 +77,8 @@ alias dd='redshift -x > /dev/null 5>&1'
 alias ll='exa --header --long -all'
 alias logout='sudo pkill -KILL -u ruben'
 alias mx='unimatrix -c blue -w -s 99 -l ckg && neofetch'
+alias mt='~/workspace/projets/meet/meet_sleep.sh &'
+alias mtv='/home/ruben/workspace/projets/molotov.AppImage &'
 alias mx='unimatrix -c yellow -w -s 99 -l ckg && neofetch'
 alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
 # alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
@@ -96,23 +108,25 @@ tmx () {
 	tmux split-window -v
 	tmux -2 attach-session -d
 }
-
+alias x!='tmux kill-session -t 0'
 alias u='yes Y| sudo apt update && yes Y| sudo apt full-upgrade && yes Y| sudo apt autoremove && sudo apt clean && yes Y| sudo apt autoclean'
 alias ui='yes Y| sudo apt purge'
 alias uii='yes Y| sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
 alias ud='yes Y| sudo apt update'
 alias ug='yes Y| sudo apt upgrade'
-alias uk='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
-alias ku='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
+alias kpsh='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks'
+alias kpl='rsync -vrP --delete-after /home/ruben/workspace/git/keylinks/ root@keylinks.top:/var/www/keylinks > /dev/null 2>&1'
 alias vba='visualboyadvance-m'
 alias vi='nvim'
 
 alias vbal='vi ~/.bash_aliases'
+alias vgpl='vi ~/workspace/git/statistica/Reading/planning_de_lecture.md'
 alias vbrc='vi ~/.bashrc'
 alias vbhi='vi ~/.bash_history'
+alias vlca='vlc --started-from-file --playlist-enqueue $(find . -type f | sort)'
 alias vvrc='vi ~/.vim/.vimrc'
 alias vtmx='vi ~/.tmux.conf'
-alias vxrc='vi ~/etc/X11/xinit/xinitrc'
+alias vxrc='vi /etc/X11/xinit/xinitrc'
 alias vrcl='vi ~/.config/awesome/rc.lua'
 alias vpll='vi ~/workspace/git/statistica/Reading/planning_de_lecture.md'
 alias v.='sudo vi .'

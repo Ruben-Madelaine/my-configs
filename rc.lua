@@ -189,7 +189,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "🧭", "🔎", "📚","🎶", "5", "🐚", "📀", "📂", "🦾" }, s, awful.layout.layouts[1])
+    awful.tag({ "🧭", "🔎", "📚","🎶", "🧮", "🐚", "📀", "📂", "🦾" }, s, awful.layout.layouts[1])
  
  
     -- Create a promptbox for each screen
@@ -644,6 +644,6 @@ if autorun then
 end
 
 -- Gaps
-beautiful.useless_gap = 5
+beautiful.useless_gap = 3
 
  

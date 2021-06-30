@@ -90,4 +90,23 @@ if command -v tmux >/dev/null 2>&1; then
 fi
 
 
+torb(){
+ xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/private/tor/"$1" &
+}
+
+torll(){
+ for entry in "/media/linux_hd/private/tor"/*
+ do
+  if [ -f "$entry" ];then
+    echo "$entry"| sed 's/^\.\///g'
+  fi
+ done
+}
+
+torl(){
+ for file in /media/linux_hd/private/tor/*; do
+  echo "${file##*/}"
+ done
+}
+
 

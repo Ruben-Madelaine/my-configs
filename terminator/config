@@ -2,7 +2,6 @@
   borderless = True
   extra_styling = False
   hide_from_taskbar = True
-  hide_on_lose_focus = True
   title_transmit_fg_color = "#8ae234"
   title_transmit_bg_color = "#fce94f"
   title_inactive_fg_color = "#5dd5ef"
