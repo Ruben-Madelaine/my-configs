@@ -56,7 +56,7 @@ alias cdm='cd /media/'
 alias cdlp='cd /media/linux_hd/private'
 alias cdp='cd /home/ruben/workspace/projets'
 alias cq='copyq & copyq menu &'
-alias cqq='copyq & copyq toggle -e &'
+alias cv='copyq & copyq toggle -e &'
 alias cdvm='cd /home/ruben/Documents/VM/'
 alias dofus='cd ~/Games; ./Ankama\ Launcher-Setup-x86_64.AppImage'
 alias dofus2="cd /home/ruben/.config/Ankama/zaap/dofus/; ./zaap-start.sh"
@@ -97,6 +97,7 @@ alias s="sudo"
 # alias s="systemctl suspend"
 alias off="sudo /sbin/shutdown -r now"
 alias toilet1="toilet -f bigmono9 -F gay"
+alias fun="toilet -f bigmono9 -F gay"
 tmx () {
 	tmux new-session -d -n S0 Command
 	tmux new-window -n S1
@@ -125,10 +126,14 @@ alias vbrc='vi ~/.bashrc'
 alias vbhi='vi ~/.bash_history'
 alias vlca='vlc --started-from-file --playlist-enqueue $(find . -type f | sort)'
 alias vvrc='vi ~/.vim/.vimrc'
+alias vimrc='vi ~/.vim/.vimrc'
+alias vrc='vi ~/.vim/.vimrc'
 alias vtmx='vi ~/.tmux.conf'
 alias vxrc='vi /etc/X11/xinit/xinitrc'
+alias vxinit='vi /etc/X11/xinit/xinitrc'
+alias vxini='vi /etc/X11/xinit/xinitrc'
 alias vrcl='vi ~/.config/awesome/rc.lua'
-alias vpll='vi ~/workspace/git/statistica/Reading/planning_de_lecture.md'
+alias vpl='vi ~/workspace/git/statistica/Reading/planning_de_lecture.md'
 alias v.='sudo vi .'
 
 
@@ -137,7 +142,8 @@ alias vold='amixer -D pulse set Master 5%-'
 alias volm='amixer -D pulse set Master mute'
 alias volum='amixer -D pulse set Master unmute'
 alias vola='amixer -D pulse set Master unmute'
-
+alias wifioff='nmcli radio wifi off'
+alias wifion='nmcli radio wifi on'
 
 # git
 alias g='git'

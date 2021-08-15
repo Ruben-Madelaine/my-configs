@@ -5,3 +5,6 @@
 . /etc/X11/Xsession
 source ~/.bashrc
 exec awesome
+
+# sh /home/ruben/workspace/git/my-configs/startup.sh &
+# feh --bg-max --randomize /home/ruben/Pictures/wallpapers/* &

@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /media/ruben/HD1/books/audio
+#cd /media/ruben/HD1/books/audio
 
 for f in *.mp3
 do echo $f

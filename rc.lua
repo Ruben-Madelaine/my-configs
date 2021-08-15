@@ -51,7 +51,8 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-
+------ PERSONAL NOTE : my default folder is /usr/share/awesome/themes/default
+--
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
@@ -64,6 +65,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 alt = "Mod1"
+
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -632,7 +634,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autorun programs
 autorun = true
 autorunApps = 
-{ 
+{
+  --"startup.sh"
+  --"brave--browser"
   --"terminator",
   --"chromium",
   --"nautilus",
@@ -646,4 +650,77 @@ end
 -- Gaps
 beautiful.useless_gap = 3
 
+ -- **********************************************************************************
+ -- -- -- -- -- -- -- -- -- -- -- MY CONFIGURATIONS  -- -- -- -- -- -- -- -- -- -- -- 
+ -- **********************************************************************************
+
+ awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+ awful.key({ "Shift" }, "Print", function () awful.util.spawn("flameshot gui 2>/dev/null'", false) end)
+
+
+    awful.key({ "Print",           }, "Return", function () awful.spawn("terminator") end,
+              {description = "open a terminal", group = "launcher"})
+
+ --
+-- awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2dB-") end)
+-- awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 2dB+") end)
+-- awful.key({ }, "XF86AudioNext",function () awful.util.spawn( "mpc next" ) end),
+-- awful.key({ }, "XF86AudioPrev",function () awful.util.spawn( "mpc prev" ) end),
+-- awful.key({ }, "XF86AudioPlay",function () awful.util.spawn( "mpc play" ) end),
+-- awful.key({ }, "XF86AudioStop",function () awful.util.spawn( "mpc pause" ) end),
+
+  -- -- -- -- -- -- -- -- -- -- -- RANDOM BACKGROUND  EVERY 6 HOURS-- -- -- -- -- -- -- -- -- -- -- 
+
+-- {{{ Function definitions
+
+-- scan directory, and optionally filter outputs
+function scandir(directory, filter)
+    local i, t, popen = 0, {}, io.popen
+    if not filter then
+        filter = function(s) return true end
+    end
+    print(filter)
+    for filename in popen('ls -a "'..directory..'"'):lines() do
+        if filter(filename) then
+            i = i + 1
+            t[i] = filename
+        end
+    end
+    return t
+end
+
+-- }}}
+
+-- configuration - edit to your liking
+wp_index = 1
+wp_timeout  = 1200 --240
+wp_path = "/home/ruben/Pictures/wallpapers/"
+wp_filter = function(s) return string.match(s,"%.png$") or string.match(s,"%.jpg$") end
+wp_files = scandir(wp_path, wp_filter)
  
+-- setup the timer
+wp_timer = timer { timeout = wp_timeout }
+wp_timer:connect_signal("timeout", function()
+ 
+  -- set wallpaper to current index for all screens
+  for s = 1, screen.count() do
+    gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
+  end
+ 
+  -- stop the timer (we don't need multiple instances running at the same time)
+  wp_timer:stop()
+ 
+  -- get next random index
+  wp_index = math.random( 1, #wp_files)
+ 
+  --restart the timer
+  wp_timer.timeout = wp_timeout
+  wp_timer:start()
+end)
+ 
+-- initial start when rc.lua is first run
+wp_timer:start()
+
+-- https://gist.github.com/anonymous/9072154f03247ab6e28c
+
+-- to change BG at each startup : https://gist.github.com/anonymous/37f3b1c58d6616cab756
