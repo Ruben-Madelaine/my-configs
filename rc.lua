@@ -693,7 +693,7 @@ end
 
 -- configuration - edit to your liking
 wp_index = 1
-wp_timeout  = 1200 --240
+wp_timeout  = 4200 --240
 wp_path = "/home/ruben/Pictures/wallpapers/"
 wp_filter = function(s) return string.match(s,"%.png$") or string.match(s,"%.jpg$") end
 wp_files = scandir(wp_path, wp_filter)
