@@ -362,8 +362,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "l", function () awful.spawn(terminal.." -e pkill -KILL -u ruben") end,
               {description = "logout session", group = "launcher"}),
 
---    awful.key({ modkey,           }, "c", function () awful.spawn(terminal.." flameshot gui &") end,
---              {description = "logout session", group = "launcher"}),
+    awful.key({modkey }, "Print", function () awful.util.spawn("flameshot gui") end, 
+              {description = "screenshot", group = "launcher"}),
 
     --
     awful.key({ modkey, "Shift" }, "n",
@@ -655,11 +655,10 @@ beautiful.useless_gap = 3
  -- **********************************************************************************
 
  awful.spawn.with_shell("~/.config/awesome/autorun.sh")
- awful.key({ "Shift" }, "Print", function () awful.util.spawn("flameshot gui 2>/dev/null'", false) end)
+
+ -- awful.key({"Print"}, function () awful.util.spawn("flameshot gui 2>/dev/null'", false) end)
 
 
-    awful.key({ "Print",           }, "Return", function () awful.spawn("terminator") end,
-              {description = "open a terminal", group = "launcher"})
 
  --
 -- awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2dB-") end)

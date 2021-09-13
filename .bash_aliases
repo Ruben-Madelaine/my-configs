@@ -44,6 +44,7 @@ alias count='ls | wc -l'
 alias conf='cd ~/.config'
 alias cdp='cd /home/ruben/workspace/projects'
 alias cds='cd /home/ruben/Documents/VM/shared'
+alias change_ip='torsocks wget -qO- http://ipecho.net/plain 2> /dev/null ; echo'
 
 alias cdb='cd //media/ruben/HD1/books'
 alias viread='vi ~/workspace/git/statistica/Reading/planning\ de\ lecture.md'
@@ -90,6 +91,8 @@ alias python='python3'
 alias py='python3' 
 alias pbcopy="xclip -sel clip"
 alias pbpaste='xclip -selection clipboard -o'
+alias private='gnome-encfs-manager'
+alias gem='gnome-encfs-manager &'
 alias reboot='sudo reboot'
 alias r='source ~/.bashrc'
 alias sleep="systemctl suspend"

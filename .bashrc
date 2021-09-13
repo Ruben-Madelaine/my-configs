@@ -91,7 +91,7 @@ fi
 
 
 torb(){
- xargs /home/ruben/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser < /media/linux_hd/private/tor/"$1" &
+ xargs torsocks midori < /home/ruben/Encfs/private/tor/"$1" &
 }
 
 torll(){
