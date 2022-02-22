@@ -66,3 +66,6 @@ fi
 
 
 source "$HOME/.cargo/env"
+
+#exa installation : select configure installation in the terminal then don't allow path edition
+# https://ourcodeworld.com/articles/read/832/how-to-install-and-use-exa-a-modern-replacement-for-the-ls-command-in-ubuntu-16-04
