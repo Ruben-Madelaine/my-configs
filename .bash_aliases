@@ -10,16 +10,19 @@
   done;
 }
 
-
-alias ddmount="sudo fdisk -l && sudo mount /dev/sd* /mnt"
-
-
-
 look4(){
+	my_var=$1
+	sudo find ./ -name "$my_var"
+	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
+}
+alias lfp="look4path"
+
+look4name(){
 	my_var=$1
 	sudo find ./ -name "$my_var" | rev | cut -d '/' -f1 | rev
 	echo "The count is $(sudo find .//. -name "$my_var" -print | grep -c //)"
 }
+alias lf="look4"
 
 ## Append history after each command
 shopt -s histappend
@@ -27,43 +30,29 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 STYLE1='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 
 ## basic aliases
-alias ar='yes Y| sudo apt-get autoremove'
 alias c='clear'
+alias ar='yes Y| sudo apt-get autoremove'
+alias count='ls | wc -l'
 alias conf='cd ~/.config'
-alias cdg='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/'
-alias cds='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/git/safranAddUser/'
-alias cdw='cd /mnt/c/Users/RubenMADELAINE/OneDrive\ -\ SYNVANCE/Bureau/workspace/'
+alias cdp='cd /mnt/c/Users/rmadelaine/Box/Ruben_Personal_Folder/projects'
+alias cdw='cd /mnt/c/Users/rmadelaine/Downloads'
+alias cddw='cd /mnt/c/Users/rmadelaine/Downloads'
+alias cdd='cd /mnt/c/Users/rmadelaine/Documents'
+alias x='exit'
 
 alias h='history'
 alias i='yes Y| sudo apt install'
-#alias ii='yes Y| sudo apt install > /dev/null 2>&1 &'
-alias ii='screen -d -m yes Y| sudo apt install'
+
 alias l='ls -CF'
 alias la='ls -A'
-alias d='redshift -PO 5500 > /dev/null 2>&1'
-alias dd='redshift -x > /dev/null 5>&1'
-#alias darker='redshift -O 2000 > /dev/null 2>&1'
-# alias ll='ls -alF'
+
 alias ll='exa --header --long -all'
-alias logout='sudo pkill -KILL -u ruben'
-alias mx='unimatrix -w -s 99 -l ckg && neofetch'
-alias mxx='unimatrix -f -s 95 -l aAcCgGkn'
-# alias neo="neofetch --source $(find /home/ruben/workspace/git/my-configs/neofetch/ascii -type f | shuf -n 1)"
-alias n='redshift -PO 2800 > /dev/null 2>&1'
-alias nn='redshift -PO 2000 > /dev/null 2>&1'
-alias nnn='redshift -PO 1500 > /dev/null 2>&1'
+
 alias pip='pip3'
 alias python='python3' 
 alias py='python3' 
-alias pbcopy="xclip -sel clip"
-alias pbpaste='xclip -selection clipboard -o'
-alias reboot='sudo reboot'
 alias r='source ~/.bashrc'
-alias sleep="systemctl suspend"
 alias s="sudo"
-# alias s="systemctl suspend"
-alias off="sudo /sbin/shutdown -r now"
-alias toilet1="toilet -f bigmono9 -F gay"
 tmx () {
 	tmux new-session -d -n S0 Command
 	tmux new-window -n S1
@@ -75,16 +64,24 @@ tmx () {
 	tmux split-window -v
 	tmux -2 attach-session -d
 }
-
-alias u='yes Y| sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean && sudo apt autoclean'
+alias x!='tmux kill-session -t 0'
+alias u='yes Y| sudo apt update && yes Y| sudo apt full-upgrade && yes Y| sudo apt autoremove && sudo apt clean && yes Y| sudo apt autoclean'
 alias ui='yes Y| sudo apt purge'
 alias uii='yes Y| sudo apt autoremove && sudo apt --purge autoremove && sudo apt clean && sudo apt autoclean'
 alias ud='yes Y| sudo apt update'
 alias ug='yes Y| sudo apt upgrade'
-alias vba='visualboyadvance-m'
+alias vi='nvim'
 
+alias vbal='vi ~/.bash_aliases'
+alias vbrc='vi ~/.bashrc'
+alias vbhi='vi ~/.bash_history'
+alias vvrc='vi ~/.vim/.vimrc'
+alias vimrc='vi ~/.vim/.vimrc'
+alias vrc='vi ~/.vim/.vimrc'
+alias vtmx='vi ~/.tmux.conf'
+alias v.='sudo vi .'
 
- # git
+# git
 alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
@@ -95,9 +92,11 @@ alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) 
 alias gbbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 alias gc='git commit -m'
-alias gcamm='git commit --amend'
-alias gacam='git add -A && git commit --amend --no-edit'
+alias gcame='git commit --amend'
 alias gcam='git commit --amend --no-edit'
+alias gagcampf='git add . && git commit --amend --no-edit && git push -f'
+alias gacampf='git add . && git commit --amend --no-edit && git push -f'
+alias gamd='git commit --amend --no-edit'
 
 alias gck="git checkout"
 alias gckb="git checkout -b" #create new branch
@@ -131,17 +130,11 @@ alias gs="git status"
 alias gss="git status -sb"
 alias gsh='git stash'
 alias gt='git tag'
-alias gu='git reset HEAD --' # unstage a cartain file:' #git unstage fileA 
+alias gu='git reset HEAD --' # unstage a cartain file: git unstage fileA 
 alias glast='git log -1 HEAD' # show last commit
 alias gw='git whatchanged'
 
-
 alias wifi_list='nmcli d wifi list'
-
-
-
-
-
 
 #git moji
 alias gac_fire='git add -A && git commit -m ":fire:' #Remove code or files.""
@@ -194,6 +187,8 @@ alias gac_au='git add -A && git commit -m ":arrow_up:'
 alias gac_ad='git add -A && git commit -m ":arrow_down:'
 alias gac_pack='git add -A && git commit -m ":package:'
 alias gac_pen='git add -A && git commit -m ":pencil:'
+alias gac_p='git add -A && git commit -m ":pencil:'
+alias gac_n='git add -A && git commit -m ":pencil:'
 alias gac_wcm='git add -A && git commit -m ":white_check_mark:'
 alias gac_t='git add -A && git commit -m ":tada:'
 alias gac_r='git add -A && git commit -m ":rocket:'
