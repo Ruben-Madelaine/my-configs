@@ -1,0 +1,112 @@
+Sub process_mails()
+Dim StartTime As Double
+Dim rng As Range
+
+StartTime = Timer
+CollectEmailData
+
+Set sht_m = ThisWorkbook.Sheets("Main")
+Set sht_i = ThisWorkbook.Sheets("INBOX")
+Set sht_s = ThisWorkbook.Sheets("SENT")
+
+
+LR = sht_m.Cells(Rows.Count, 10).End(xlUp).Row + 1
+LR_i = sht_i.Cells(Rows.Count, 1).End(xlUp).Row
+LR_s = sht_s.Cells(Rows.Count, 1).End(xlUp).Row
+
+sht_m.Cells(LR, 10) = Format(Date, "d mmmm yyyy")
+sht_m.Cells(LR, 11) = Format(Time, "hh:mm:ss")
+sht_m.Cells(LR, 12) = Format((Timer - StartTime) / 86400, "hh:mm:ss")
+sht_m.Cells(LR, 13) = LR_i - 1
+sht_m.Cells(LR, 14) = LR_s - 1
+
+Set rng = sht_m.Range(Cells(LR, 10), Cells(LR, 14))
+With rng.Borders
+    .LineStyle = xlContinuous
+    .Weight = xlThin
+End With
+
+MsgBox ("End of process!")
+
+End Sub
+
+Sub CollectEmailData()
+
+    ' Declare variables
+    Dim olApp As Object ' Outlook Application
+    Dim olNamespace As Object ' Outlook Namespace
+    Dim olFolder As Object ' Outlook Folder
+    Dim olItems As Object ' Outlook Items
+    Dim olMail As Object ' Outlook Mail Item
+    Dim ws As Worksheet ' Excel Worksheet
+    Dim rng As Range ' Excel Range
+    Dim rowCount As Long ' Row counter
+    Dim arr1 As Variant
+    Dim arr2 As Variant
+
+    arr1 = Array("INBOX", "SENT")
+    arr2 = Array(olFolderInbox, olFolderSentMail)
+    
+    For i = 0 To 1
+    ' Create and reference Outlook objects
+    Set olApp = CreateObject("Outlook.Application")
+    Set olNamespace = olApp.GetNamespace("MAPI")
+    Set olFolder = olNamespace.GetDefaultFolder(arr2(i))
+        
+    ' Create and reference Excel objects
+    Set ws = ThisWorkbook.Sheets(arr1(i))
+
+    rowCount = 2 ' Start from row 2 to avoid overwriting headers
+    ProcessFolder olFolder, ws, rowCount
+    
+    ' Clean up Outlook objects
+    Set olMail = Nothing
+    Set olItems = Nothing
+    Set olNamespace = Nothing
+    Set olApp = Nothing
+Next
+
+End Sub
+
+Sub ProcessFolder(ByVal olFolder As Object, ByVal ws As Worksheet, ByRef rowCount As Long)
+    
+    ' Declare variables
+    Dim olItems As Object ' Outlook Items
+    Dim olMail As Object ' Outlook Mail Item
+    Dim olSubfolder As Object ' Outlook Folder
+    
+    ' Get items from the current folder
+    Set olItems = olFolder.Items
+    
+    ' Loop through all items in the current folder
+    For Each olMail In olItems
+        ' Filter for Mail Items only
+        If olMail.Class = 43 Then ' 43 represents Mail Items
+            ' Add data to Excel table
+            ws.Cells(rowCount, 1).Value = olMail.ReceivedTime
+            ws.Cells(rowCount, 2).Value = olMail.Subject
+            If ws.Name = "INBOX" Then
+                ws.Cells(rowCount, 4).Value = olMail.SenderName
+                ws.Cells(rowCount, 5).Value = olMail.Sender
+            End If
+            If olMail.Attachments.Count > 0 Then
+                ws.Cells(rowCount, 3).Value = "Yes"
+            Else
+                ws.Cells(rowCount, 3).Value = "No"
+            End If
+            rowCount = rowCount + 1
+        End If
+    Next olMail
+    
+    ' Loop through all subfolders and call ProcessFolder recursively
+    For Each olSubfolder In olFolder.Folders
+        ProcessFolder olSubfolder, ws, rowCount
+    Next olSubfolder
+    
+    ' Clean up Outlook objects
+    Set olItems = Nothing
+    Set olMail = Nothing
+    Set olSubfolder = Nothing
+    
+End Sub
+
