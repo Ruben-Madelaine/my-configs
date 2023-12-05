@@ -1,5 +1,33 @@
 # Set up the prompt
-# https://chat.openai.com/share/5821c8f7-36b2-4efc-9fb7-e82183cf8ab5
+For Each olMail In olItems
+    ' Filter for Mail Items only
+    If olMail.Class = 43 Then ' 43 represents Mail Items
+        ' Add data to Excel table
+        ws.Cells(rowCount, 1).Value = olMail.ReceivedTime
+        ws.Cells(rowCount, 2).Value = olMail.Subject
+        If ws.Name = "INBOX" Then
+            ws.Cells(rowCount, 4).Value = olMail.SenderName
+            ws.Cells(rowCount, 5).Value = olMail.Sender
+        End If
+        If olMail.Attachments.Count > 0 Then
+            ws.Cells(rowCount, 3).Value = "Yes"
+        Else
+            ws.Cells(rowCount, 3).Value = "No"
+        End If
+        
+        ' Handle recipients
+        Dim recipCount As Integer
+        recipCount = olMail.Recipients.Count
+        
+        ' Loop through recipients and add them to columns
+        For i = 1 To recipCount
+            ws.Cells(rowCount, 5 + i).Value = olMail.Recipients(i).Name ' Change 5 to the next available column
+        Next i
+        
+        rowCount = rowCount + 1
+    End If
+Next olMail
+# end
 autoload -Uz promptinit
 promptinit
 prompt adam1
