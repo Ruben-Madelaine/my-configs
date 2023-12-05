@@ -1,5 +1,5 @@
 # Set up the prompt
-
+# https://chat.openai.com/share/5821c8f7-36b2-4efc-9fb7-e82183cf8ab5
 autoload -Uz promptinit
 promptinit
 prompt adam1
